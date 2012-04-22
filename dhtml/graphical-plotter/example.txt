@@ -1,0 +1,16 @@
+<script type="text/javascript">
+//<![CDATA[
+
+canvas = new Canvas;
+
+canvas.pen.color = "#f00";
+canvas.rectangle(30, 20, 20, 20);
+canvas.pen.color = "#080";
+canvas.rectangle(35, 25, 10, 10);
+canvas.pen.color = "#008";
+canvas.arc(50, 30, 10, 180, 270);
+canvas.arc(30, 30, 10, 0, 270);
+canvas.pen.color = "#ff0";
+
+//]]>
+</script>

@@ -1,0 +1,48 @@
+
+	focuser(object: HTMLElement): void
+	
+		Turns the field focusable.
+		
+			object reference element
+		
+	
+
+
+After the function calling, the element will be enhanced with the following events and properties:
+
+Events
+
+	Element.onkeypress: Function(key: Integer): void
+	
+		Occurs when the key is pressed, can be called several times while the key is pressed.
+		
+			key code of the pressed key
+		
+	
+	Element.onkeydown: Function(key: Integer): void
+	
+		Occurs when a key is pressed.
+		
+			key code of the pressed key
+		
+	
+	Element.onkeyup: Function(key: Integer): void
+	
+		Occurs when a key is released.
+		
+			key code of the pressed key
+		
+	
+	Element.onfocus: Function(void): void
+	Occurs when the element receive focus.
+	Element.onblur: Function(void): void
+	Occurs when the element loose focus.
+
+
+Methods
+
+	Element.focus(void): void
+	Focus the element.
+
+	Element.blur(void): void
+	Removes the focus of the element.

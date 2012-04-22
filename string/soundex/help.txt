@@ -1,0 +1,6 @@
+String.soundex(precision: Integer): String
+
+	Returns the phonetical code of the string.
+	
+		precision "precision" of the code, the minimum precision is 4 and the maximum is 10
+	

@@ -1,0 +1,46 @@
+<script type="text/javascript">
+//<![CDATA[
+
+//adds overloading support to the variable func
+func = new Overloader;
+
+//adds a version that receives an argument of the type Number
+func.overload(function(x){
+	document.write("Receives: NUMBER<br />");
+}, Number);
+
+//String
+func.overload(function(x){
+	document.write("Receives: STRING<br />");
+}, String);
+
+//version that receives 2 arguments, Function and Number
+func.overload(function(x,y){
+	document.write("Receives: FUNCTION, NUMBER<br />");
+}, Function, Number);
+
+//Number and String
+func.overload(function(x,y){
+	document.write("Receives: NUMBER, STRING<br />");
+}, Number, String);
+
+//test calls
+func(function(){}, 123);
+func(123);
+func("ABC");
+func(123, "ABC");
+
+/*when there's no version with the required argument types, it searches for the best match,
+the function which has more similar arguments, if two or more functions have the same "score",
+it calls the one that was overloaded first*/
+func({});
+
+//removes the first function that was overloaded
+func.unoverload(Number);
+
+//as there's no function that receives an "Object", the first function will be called
+//again, but as we removed the "Number" handler, the next in the list is the one that receives a "String"
+func({});
+
+//]]>
+</script>

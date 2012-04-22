@@ -1,0 +1,3 @@
+String.rot13(void): String
+
+	Encodes/decodes a string into the rot13 format.

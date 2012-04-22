@@ -1,0 +1,71 @@
+
+	hitTest(object: HTMLElement, test: HTMLElement): Boolean
+	
+		Tests if an object is inside the visible area of another object and, returns true if yes.
+		
+			object reference object
+			test object that will be checked
+		
+	
+
+	hitTest(x: Integer, y: Integer, test: HTMLElement): Boolean
+	
+		Tests if a point is inside the visible area of an object and, returns true if yes.
+		
+			x x coordinate
+			y y coordinate
+			test object that will be checked
+		
+	
+		
+	hitTest(x: Integer, y: Integer, test: HTMLElement): Boolean
+	
+		Tests if a rectangle is inside the visible area of an object and, returns true if yes.
+		
+			x x coordinate
+			y y coordinate
+			w width
+			h height
+			test object that will be checked
+		
+	
+		
+	hitTest(object: HTMLElement, test: Array): Array
+	
+		Tests if one or more objects are inside the visible area of another object and, returns the elements os elementos that passed the test.
+		
+			object reference object
+			test object list to be checked
+		
+	
+
+	hitTest(object: HTMLElement, test: Array): Array
+	
+		Tests if object is inside the visible area of one or more objects and, returns the elements that passed the test.
+		
+			object reference object
+			test object list to be checked
+		
+	
+		
+	hitTest(x: Integer, y: Integer, test: Array): Array
+	
+		Tests if a point is inside the visible area of one or more objects and, returns the elements that passed the test.
+		
+			x x coordinate
+			y y coordinate
+			test object list to be checked
+		
+	
+
+	hitTest(x: Integer, y: Integer, test: Array): Array
+	
+		Tests if a rectangle is inside the visible area of one or more objects and, returns the elements that passed the test.
+		
+			x x coordinate
+			y y coordinate
+			w width
+			h height
+			test object list to be checked
+		
+			

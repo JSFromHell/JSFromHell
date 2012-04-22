@@ -1,0 +1,8 @@
+<script type="text/javascript">
+//<![CDATA[
+
+var s = "x jonas Raoni SOARES silva ~84";
+document.write(('"' + s + '".capitalize() = ').bold(), s.capitalize());
+
+//]]>
+</script>

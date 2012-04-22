@@ -1,0 +1,10 @@
+
+	equals(a: Object, b: Object): Boolean
+	
+		Analyzes two or more objects and, returns true if they are equal (contain the same properties with the same values).
+		
+			a object to analyze
+			b object to analyze
+			... infinite amount of objects
+		
+	

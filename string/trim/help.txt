@@ -1,0 +1,16 @@
+
+	String.prototype.trim([chars: String = " "], [type: Integer = 0]): String
+	
+		Remove characters on the left, right or both sides of the string.
+		
+			chars set of characters that will be removed
+			type
+			specifies where the trim will occur, possible values are:
+				
+					0 = remove on both sides
+					1 = remove characters on the left
+					2 = remove characters on the right
+				
+			
+		
+	

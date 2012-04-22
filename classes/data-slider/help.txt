@@ -1,0 +1,43 @@
+Constructor
+
+	DataSlider(onchange: Function(data: Object): void, interval: Integer, arg0..argN: Object)
+	
+		Generates an instance of DataSlider.
+		
+			onchange function that will be called each time the class advances to the next item
+			interval time interval in milisegundos that controls when the item should be rotated
+			arg0..argN objects that will be added to the container
+		
+	
+
+
+Properties
+
+	DataSlider.onchange: Function(data: Object): void
+	function that will be called each time the class advances to the next item
+	DataSlider.interval: Integer
+	time interval in milisegundos that controls when the item should be rotated
+
+
+
+Methods
+
+	DataSlider.play(void): void
+	Starts the automatic sliding.
+
+	DataSlider.stop(void): void
+	Interrupts the automatic sliding.
+
+	DataSlider.show(index: Integer): void
+	
+		Selects an object and calls the onchange event passing itself as argument.
+		
+			index index of the object
+		
+	
+
+	DataSlider.previous(void): void
+	Goes to the next object.
+
+	DataSlider.next(void): void
+	Goes to the previous object.

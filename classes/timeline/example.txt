@@ -1,0 +1,40 @@
+<div id="box" style="position: absolute; top: 100px; background: #efe; width: 100px; height: 100px">25 fps</div>
+<div id="box2" style="position: absolute; top: 300px; background: #ff9; width: 100px; height: 100px">12 fps</div>
+
+<strong>TimeLine working together with the ease in quad function.</strong><br />
+
+<script type="text/javascript">
+//<![CDATA[
+
+Math.ease = function (t, b, c, d) {
+	if ((t /= d / 2) < 1)
+		return c / 2 * t * t + b;
+	return -c / 2 * (--t * (t - 2) - 1) + b;
+};
+
+var o = new TimeLine(25, 50), d = document, b = d.getElementById("box");
+o.onframe = function(){
+	b.style.left = Math.ease(this.current, 0, 400, 30) + "px";
+};
+o.onstart = function(){
+	d.body.appendChild(d.createTextNode("Started"));
+};
+o.onstop = function(){
+	d.body.appendChild(d.createTextNode(" - Finished (" + (((new Date) - this.time)) + " msec)"))
+	d.body.appendChild(d.createElement("br"));
+	this.start();
+};
+o.start();
+
+
+var o2 = new TimeLine(12, 50), b2 = d.getElementById("box2");
+o2.onframe = function(){
+	b2.style.left = Math.ease(this.current, 0, 400, 30) + "px";
+};
+o2.onstop = function(){
+	this.start();
+};
+o2.start();
+
+//]]>
+</script>

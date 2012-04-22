@@ -1,0 +1,12 @@
+
+	closestLinePoint( px: Integer, py: Integer, x: Integer, y: Integer, angle: Double ): Object
+	
+		Retorna um objeto contendo duas propriedades (x e y), que especificam o ponto limítrofe de um círculo em relação a um ponto.
+		
+			px point's x coord
+			py point's y coord
+			x x coord of the line's center point
+			y y coord of the line's center point
+			ray line's angle in degrees
+		
+	

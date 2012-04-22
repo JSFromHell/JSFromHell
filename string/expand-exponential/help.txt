@@ -1,0 +1,3 @@
+
+	String.prototype.expandExponential(void): String
+	Expands a number in the exponential form to the decimal form.

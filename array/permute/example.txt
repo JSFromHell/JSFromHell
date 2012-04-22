@@ -1,0 +1,11 @@
+<script type="text/javascript">
+//<![CDATA[
+
+var a = ["A", "B", "C", "D"], j = permute(a);
+document.write(
+	"<h2>", a.join(" - "), " = ", j.length, "</h2>",
+	j.join("<br />")
+);
+
+//]]>
+</script>

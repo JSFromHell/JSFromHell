@@ -1,0 +1,8 @@
+
+	fibonacci(n: Integer): Integer
+	
+		Returns the number in the position "n" of the fibonacci sequence.
+		
+			n posição desejada
+		
+	

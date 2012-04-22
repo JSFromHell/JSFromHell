@@ -1,0 +1,8 @@
+
+	mmc(numbers: Array): Integer
+	
+		Returns the least numer able to be divided by all the numbers passed as parameter, the least common multiple.
+		
+			numbers array of integer numbers
+		
+	

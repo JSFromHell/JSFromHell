@@ -1,0 +1,35 @@
+Click inside and outside of the polygon.
+
+<script type="text/javascript" src="/js/graphical-plotter.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+var length = 50,
+points = [
+	{x: 0, y: 0},
+	{x: 0, y: length},
+	{x: length, y: 10},
+	{x: -length, y: -10},
+	{x: 0, y: -length},
+	{x: 0, y: 0}
+];
+
+var canvas = new Canvas;
+canvas.pen.color = "#f00";
+canvas.pixelSize = 5;
+
+canvas.moveTo(length, length);
+for(var i = points.length; i--; canvas.lineTo(length + points[i].x, length + points[i].y));
+
+document.onclick = function(e){
+	function getMouse(e){
+		var w = window, b = document.body;
+		return {x: e.clientX + (w.scrollX || b.scrollLeft || b.parentNode.scrollLeft || 0),
+		y: e.clientY + (w.scrollY || b.scrollTop || b.parentNode.scrollTop || 0)};
+	}
+	var m = getMouse(e || event);
+	alert(isPointInPoly(points, {x: m.x / canvas.pixelSize - length, y: m.y / canvas.pixelSize - length}) ? "In" : "Out");
+}
+
+//]]>
+</script>

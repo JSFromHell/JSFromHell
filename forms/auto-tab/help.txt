@@ -1,0 +1,8 @@
+
+	autoTab(form: HTMLFormElement): void
+	
+		The function will add the automatic tabulation for all the inputs that have the maxlenght attribute setted.
+		
+			form formulary that will receive the automatic tabulation
+		
+	

@@ -1,0 +1,13 @@
+<script type="text/javascript">
+//<![CDATA[
+
+var s = "MY WORLD IS BIIIIIIIIIIIIIIIIIIIIIG!!!!!";
+document.write(
+	"<h2>S = ", s, "</h2>",
+	"<h2>S.wordWrap(10, \"&lt;br/&gt;\", 0)</h2>", s.wordWrap(10, "<br/>", 0),
+	"<h2>S.wordWrap(10, \"&lt;br/&gt;\", 1)</h2>", s.wordWrap(10, "<br/>", 1),
+	"<h2>S.wordWrap(10, \"&lt;br/&gt;#\", 2)</h2>", s.wordWrap(10, "<br/>#", 2)
+);
+
+//]]>
+</script>

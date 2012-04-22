@@ -1,0 +1,14 @@
+<script type="text/javascript">
+//<![CDATA[
+var n = "TEST";
+document.write(
+	"Cookies supported: ", Cookie.isSupported(), "<br />",
+	'Writing cookie "' + n + '" = ', Cookie.write(n, "1234567890"), "<br />",
+	'Cookie exists "' + n + '" = ', Cookie.exists(n) != 0, "<br />",
+	'Reading cookie "' + n + '" = ', Cookie.read(n), "<br />",
+	'Removing cookie "' + n + '" = ', Cookie.remove(n), "<br />",
+	'Cookie exists "' + n + '" = ', Cookie.exists(n) != 0
+);
+
+//]]>
+</script>

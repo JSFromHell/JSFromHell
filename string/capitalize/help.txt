@@ -1,0 +1,5 @@
+
+	String.capitalize(void): String
+	
+		Returns the string with the first letter of the words in upper case and the others in lower case.
+	

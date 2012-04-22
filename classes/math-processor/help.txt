@@ -1,0 +1,67 @@
+Constructor
+
+	MathProcessor(void)
+	Generates an instance of MathProcessor.
+
+
+Properties
+
+	MathProcessor.methods: Array
+	
+		It's an associative array that allows users to increase the parser by adding your own functions.
+	
+
+
+Methods
+
+	MathProcessor.parse(expression: String): Number
+	
+		Parses a set of pre-defined commands to make a mathematical expression.
+		
+			expression mathematical expression that will be parsed
+		
+	
+
+
+Basic operations
+
+	
+		
+			( and ) Precedence operator
+		
+	
+	
+		
+			+ Addition
+		
+	
+	
+		
+			- Subtraction
+		
+	
+	
+		
+			* Multiplication
+		
+	
+	
+		
+			/ Division
+		
+	
+	
+		
+			^ Power
+		
+	
+	
+		
+			~ Square Root
+		
+	
+	
+		
+			% Division Reminder
+		
+	

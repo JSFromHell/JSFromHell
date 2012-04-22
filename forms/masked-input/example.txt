@@ -1,0 +1,29 @@
+<form action="">
+	<fieldset>
+	<legend>Máscara Genérica</legend>
+	<label>telefone "(99)9999-9999"</label><input type="text" name="fone" />
+	<label>data "99/99/9999"</label><input type="text" name="data" />
+	<label>máscara = letra + letra sem acento + 2 números + tracinho + qualquer digito + letra "Cc99-*C"</label><input type="text" name="etc" />
+	<label>permite qualquer coisa menos a, b ou c "E^abc"</label><input type="text" name="except" />
+	<label>permite somente a, b ou c "O^abc"</label><input type="text" name="only" />
+	<label>somente letras "C^"</label><input type="text" name="letra" />
+	<label>somente letras e, tb espaço em branco "C^ "</label><input type="text" name="letra2" />
+	<label>somente números e, as letras a, b e c "9^abc"</label><input type="text" name="numero" />
+	</fieldset>
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+
+var f = document.forms[0];
+MaskInput(f.fone, "(99)9999-9999");
+MaskInput(f.data, "99/99/9999");
+MaskInput(f.etc, "Cc99-*C");
+MaskInput(f.except, "E^abc");
+MaskInput(f.only, "O^abc");
+MaskInput(f.letra, "C^");
+MaskInput(f.letra2, "C^ ");
+MaskInput(f.numero, "9^abc");
+
+//]]>
+</script>

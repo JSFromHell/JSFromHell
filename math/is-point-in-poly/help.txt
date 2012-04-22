@@ -1,0 +1,9 @@
+
+	isPointInPoly(polygon: Array, point: Object): Boolean
+	
+		Checks whether the point is inside the polygon.
+		
+			polygon array of points, each element must be an object with two properties (x and y)
+			point point, object with two properties (x and y)
+		
+	

@@ -1,0 +1,16 @@
+JSFromHell.com @ http://jsfromhell.com
+--------------------------------------
+
+Name: Timeline
+URL: http://jsfromhell.com/classes/timeline
+Author: Jonas Raoni Soares Silva
+Created: 2008.03.14
+Modified: 2008.03.14
+Description:
+Simulates the Adobe Flash timeline. You define the amount of frames, the speed in fps (frames per second) and, at each frame passage an event is called, useful for animations.
+
+To keep yourself updated, sign up the ATOM feed at: http://jsfromhell.com/en/feed/atom.xml
+
+We authorize the copy and modification of all the codes on the site, since the original author credits are kept
+In the case you have a code that you consider indispensable, job offers, feature requests, suggestions or if you've found problems on the site, contact us.
+We don't assume any responsibility for any kind of damage, direct or indirect, that can be raised upon the utilization of our codes/site or any site that's available through hiperlinks in our site.

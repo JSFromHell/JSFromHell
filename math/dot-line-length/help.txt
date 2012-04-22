@@ -1,0 +1,14 @@
+
+	dotLineLength(x: Integer, y: Integer, x0: Integer, y0: Integer, x1: Integer, y1: Integer, [overLine: Boolean = False]): Double
+	
+		Distance from a point to a line or segment.
+		
+			x point's x coord
+			y point's y coord
+			x0 x coord of the line's A point
+			y0 y coord of the line's A point
+			x1 x coord of the line's B point
+			y1 y coord of the line's B point
+			overLine specifies if the distance should respect the limits of the segment (overLine = true) or if it should consider the segment as an infinite line (overLine = false), if false returns the distance from the point to the line, otherwise the distance from the point to the segment
+		
+	

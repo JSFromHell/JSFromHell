@@ -1,0 +1,86 @@
+<style type="text/css">
+#box, #box2, #box3{
+	position: absolute;
+	left: 50px;
+	top: 100px;
+	width: 300px;
+	height: 100px;
+	overflow: hidden;
+	background: ;
+	border: #999 solid 1px;
+}
+#box2{
+	top: 215px;
+	width: 400px;
+}
+#container{
+	position: relative;
+	top: 160px;
+	width: 600px;
+	height: 300px;
+	overflow: hidden;
+	background: #ffe;
+	border: 1px solid;
+}
+.marker{
+	font-size: 1px;
+	width: 10px;
+	height: 10px;
+	margin-left: -5px;
+	margin-top: -5px;
+	border: #000 solid 1px;
+	cursor: move;
+}
+.green{
+	background: #0f0;
+}
+</style>
+
+<div id="container">
+	<div id="box3">
+		Within a container with "position:relative"
+	</div>
+</div>
+<div id="box">
+	With max size filter and markers with different classes
+</div>
+<div id="box2">
+	With filter to keep the 1:1 proportion when resizing by the diagonals holding the shift key 
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+
+x = new Resizer(document.getElementById("box"));
+x.setAnchorClass("marker");
+x.setAnchorClass({n: "marker green", s: "marker green", w: "marker green", e: "marker green"});
+x.showAnchors(true);
+
+limitSize = function(e, o){
+	var x = 400, y = 200, c = this;
+	c.h > y && (!o.v && (c.y += c.h - y), c.h = y);
+	c.w > x && (!o.h && (c.x += c.w - x), c.w = x);
+}
+x.addFilter(limitSize);
+
+
+y = new Resizer(document.getElementById("box2"));
+y.setAnchorClass("marker");
+y.showAnchors(true);
+
+shiftResize = function(e, o){
+	var c = this, d = c.w - c.h;
+	e.shiftKey && o.h != 1 && o.v != 1 &&
+	(d > 0 ? c.h = c.w : c.w = c.h,
+	!o.v ? d > 0 ? c.y -= d : !o.h && (c.x += d)
+	: !o.h && d < 0 && (c.x += d));
+}
+y.addFilter(shiftResize);
+
+document.getElementById("container").style.position = "relative";
+z = new Resizer(document.getElementById("box3"));
+z.setAnchorClass("marker");
+z.showAnchors(true);
+
+//]]>
+</script>

@@ -1,0 +1,43 @@
+<form id="form">
+	<fieldset>
+		<legend>Selection Test</legend>
+		<textarea name="text" rows="10" cols="30">
+www.jsfromhell.com
+Jonas Carlos Lalala
+Bin Laden x Bush
+		</textarea><br />
+		<input name="getText" type="button" value="[Get selected text]" />
+		<input name="getSel" type="button" value="[Get cursor]" />
+		<br /><input name="setText" type="button" value="[Set selected text]" />
+		<input name="setSel" type="button" value="[Set cursor]" />
+	</fieldset>
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+
+var f = document.forms.form;
+var selection = new Selection(f.text);
+
+f.getText.onclick = function(){
+	alert(selection.getText());
+	f.text.focus();
+};
+f.setText.onclick = function(){
+	var s = prompt("New text:", selection.getText());
+	s !== null && selection.setText(s);
+	f.text.focus();
+};
+f.getSel.onclick = function(){
+	var s = selection.getCaret();
+	alert("Start: " + s.start + "\nEnd: " + s.end);
+	f.text.focus();
+};
+f.setSel.onclick = function(){
+	var s = selection.getCaret();
+	selection.setCaret(+prompt("Start:", s.start) || 0, +prompt("End:", s.end) || 0);
+	f.text.focus();
+};
+
+//]]>
+</script>

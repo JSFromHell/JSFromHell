@@ -1,0 +1,8 @@
+
+	shuffle(vector: Array): Array
+	
+		Returns an array with the values scrambled.
+		
+			vector array that will be scrambled
+		
+	

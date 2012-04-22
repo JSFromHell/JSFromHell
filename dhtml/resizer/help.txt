@@ -1,0 +1,78 @@
+Constructor
+
+	Resizer(element: HTMLElement)
+	
+		Generates an instance of Resizer.
+		
+			element element that will receive the resizing support
+		
+	
+
+
+Properties
+
+	Resizer.h: Integer Specifies the horizontal position of the anchor that is beeing dragged, where: 0 = left, 1 = middle, 2 = right.
+	Resizer.v: Integer Specifies the vertical position of the anchor that is beeing dragged, where: 0 = top, 1 = middle, 2 = bottom.
+	Resizer.po: Object Keep the coords of where the object was when the resizing started, contain 4 properties: x (left), y (top), w (width) and h (height).
+	Resizer.o: HTMLElement HTML element associated to the resizer.
+	Resizer.f: Array Array containing the movementation filters.
+	Resizer.av: Boolean Tells if the drag anchors are visible.
+
+
+Methods
+
+	Resizer.update(void): void
+	
+		Forces the repositioning of the drag anchors.
+	
+	Resizer.showAnchors(show: Boolean): void
+	
+		Show/hide the drag anchors.
+		
+			show if true, show, otherwise hide the anchors
+		
+	
+	Resizer.setAnchorClass(info: Object): void
+	
+		Sets up the CSS class for all or just some anchors.
+		
+			info
+			accepts two types of input, if a String is passed: the class will set
+			the class name of all the anchors with the passed string, the other alternative
+			allow you to set just determinated anchors, just pass an object containing "magical"
+			properties defined with CSS class names (look at the example), the properties are:
+			se (southeast), e (east), ne (northeast), n (north), s (south), nw (northwest), w (west), sw (southwest)
+		
+	
+	Resizer.addFilter(handler: Function(event: Event, resizer: Resizer): void): void
+	
+		Adds a movementation filter to the resizer.
+		
+			handler function to be added, it receives as argument the event object and the instance itself. The scope of the function (the "this" variable) has four properties: x (left), y (top), w (width) and h (height), by changing any of them, you also change the element coords
+		
+	
+
+
+Events
+
+	Resizer.onstart: function(event: Event): void
+	
+		This event is called when the resizing starts.
+		
+			event event object
+		
+	
+	Resizer.onresize: function(event: Event): void
+	
+		This event is called while the element is beeing resized.
+		
+			event event object
+		
+	
+	Resizer.onstop: function(event: Event): void
+	
+		This event is called when the resizing finishes.
+		
+			event event object
+		
+	

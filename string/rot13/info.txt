@@ -1,0 +1,16 @@
+JSFromHell.com @ http://jsfromhell.com
+--------------------------------------
+
+Name: ROT13
+URL: http://jsfromhell.com/string/rot13
+Author: Jonas Raoni Soares Silva
+Created: 2005.11.01
+Modified: 2005.11.01
+Description:
+Encodes and decodes strings into the ROT13 format (rotation of the 26 characters of the alphabet by 13 positions).
+
+To keep yourself updated, sign up the ATOM feed at: http://jsfromhell.com/en/feed/atom.xml
+
+We authorize the copy and modification of all the codes on the site, since the original author credits are kept
+In the case you have a code that you consider indispensable, job offers, feature requests, suggestions or if you've found problems on the site, contact us.
+We don't assume any responsibility for any kind of damage, direct or indirect, that can be raised upon the utilization of our codes/site or any site that's available through hiperlinks in our site.

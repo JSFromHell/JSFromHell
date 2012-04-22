@@ -1,0 +1,8 @@
+<script type="text/javascript">
+//<![CDATA[
+
+o = dotLineIntersection(0, 1, 0, 0, 1, 1);
+alert('y = ' + o.y + '\nx = ' + o.x);
+
+//]]>
+</script>

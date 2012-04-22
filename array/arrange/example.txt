@@ -1,0 +1,11 @@
+<script type="text/javascript">
+//<![CDATA[
+
+var a = ["A", "B", "C"], q = 3, j = arrange(a, q);
+document.write(
+	"<h2>", a.join(" - "), " : ", q, " = ", j.length, "</h2>",
+	j.join("<br />")
+);
+
+//]]>
+</script>

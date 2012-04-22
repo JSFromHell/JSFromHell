@@ -1,0 +1,51 @@
+
+	MaskInput(field: HTMLInputElement, mask: String): void
+	
+		Adds the mask to a field.
+		
+			field field that will receive the mask
+			mask mask that will be applied
+		
+	
+
+
+Default Rules
+
+	a = A-Z and 0-9
+	A = A-Z, accents and 0-9
+	9 = 0-9
+	C = A-Z and accents
+	c = A-Z
+	* = Any character
+
+
+Special rules
+
+	E = (Except) exception
+	O = (Only) only
+
+
+Mask creation
+
+	Simple masks:
+	In this kind of mask the user can't type more characters than the amount of
+	characters in the mask.
+	Example:
+	telephone = (99)9999-9999
+	date = 99/99/9999
+
+
+	Special mask "rule^exceptions":
+	This kind of mask is composed ty two parts, separated by "^",
+	the left side specified the rule and the right one, the exceptions for the selected rule.
+	Example:
+	9^abc = The rule is to accept only numbers "9" and the exception are the characters a, b and c
+	c^123 = Accepts only a-z characters and the exception are the numbers 1, 2 and 3
+
+
+	Use of the special rules:
+	it's similar to the special mask, but the left side has a different meaning,
+	can be "E" (any character, except...) and "O" (only...)
+	Example:
+	E^abc: Accepts any character, except a, b and c
+	O^123: Only allows the characters 1, 2 e 3

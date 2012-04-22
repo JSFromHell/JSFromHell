@@ -1,0 +1,88 @@
+<style type="text/css">
+/*container da lista | container of the list*/
+.autocomplete{
+	cursor: pointer;
+	border: 1px solid #999;
+	border-top: none;
+	background: #eee;
+}
+/*items da listagem | items of the list*/
+.autocomplete .normal{border-top: 1px solid #999;}
+/*selectedionado item | selected item*/
+.autocomplete .selected{background: #ddf;}
+/*caracteres que combinaram | characters that matched*/
+.autocomplete .highlited{font-weight: bold; color: #008;}
+</style>
+
+<form action="">
+	<fieldset>
+		<legend>Preenchimento dinâmico | Dynamic filling</legend>
+		<label for="listB">
+		Busca case-insensitive em todas as partes da string.
+		<br />Case-insensitive search in all the parts of the string.
+		</label>
+		<input type="text" id="listB" />
+
+		<br /><label for="listA">
+		Busca case-sensitive começando a partir do inicio da string.
+		<br />Case-sensitive search starting from the beginning of the string.
+		</label>
+		<input type="text" id="listA" />
+
+		<p>Para corrigir o bug do IE ao criar elementos sobre &lt;select&gt;'s, olhe o exemplo disponível aqui: 
+		<a href="/geral/hittest#example-header" title="Hit Test">Hit Test</a>.
+		<br />To correct the IE bug when creating elements over &lt;select&gt;'s, look at the example available here:
+		<a href="/geral/hittest#example-header" title="Hit Test">Hit Test</a>.
+</p>
+	</fieldset>
+</form>
+<div id="label" style="clear: both;"></div>
+
+<script type="text/javascript">
+//<![CDATA[
+
+var list = [
+	"Osama Bin Laden", "Edílson Pereira de Carvalho", "Jonas Raoni Soares Silva",
+	"Carlos R. L. Rodrigues", "George Bush", "Pedro de Lara", "Britney Spears", "Charles Bronson",
+	"Roberto Jefferson", "Silvio Santos", "Tati Quebra Barraco", "William Bonner"
+].sort();
+
+document.getElementById("label").innerHTML = "<br /><b>Nomes Disponíveis | Available names:</b><br />" + list.join("<br />");
+
+//-- Busca simples / Simple search ------------------
+new IncrementalSearch(document.forms[0].listA, function(o, search){
+	if(!search)
+		return;
+	for(var i = -1, l = list.length; ++i < l;)
+		/*se encontrou "search" no começo da string (index == 0)
+		if "search" was found in the beginning of the string (index == 0)*/
+		if(!list[i].indexOf(search))
+			/*adiciona o item na listagem, informando que a posição onde a palavra foi encontrada é 0
+			adds the item to the list, telling that the position where the word was found is 0*/
+			o.add(list[i], 0);
+	/*shows the list
+	exibe a listagem*/
+	o.show();
+}, "autocomplete");
+
+
+
+//-- Busca múltiplas ocorrências / Searches for multiple matches ----
+function getNames(o, search){
+	if(search = search.toLowerCase())
+		for(var i = -1, l = list.length; ++i < l;){
+			/*procura todas as ocorrências de "search" e adiciona os índices em um array
+			searches all the matches of "search" and adds the indexes in an array */
+			for(var j = 0, indices = []; j = list[i].toLowerCase().indexOf(search, j) + 1;
+				indices[indices.length] = j - 1);
+			/*se alguma ocorrência foi encontrada, adiciona o item e passa a posição das ocorrências
+			if any ocurrence was found, adds the item and pass the position of the matches*/
+			if(indices.length)
+				o.add(list[i], indices);
+		}
+	o.show();
+}
+new IncrementalSearch(document.forms[0].listB, getNames, "autocomplete");
+
+//]]>
+</script>

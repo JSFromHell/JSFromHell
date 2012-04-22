@@ -1,0 +1,9 @@
+
+	rotate(vector: Array, rotateBy: Integer): Array
+	
+		Rotates the array elements to the left or right and, returns the own array.
+		
+			vector array to be rotated
+			rotateBy specifies how many positions the array should be rotated by, negative values rotate to the left and positive ones to the right
+		
+	

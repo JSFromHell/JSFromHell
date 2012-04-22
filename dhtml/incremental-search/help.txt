@@ -1,0 +1,123 @@
+CSS Classes
+
+	.NameOfTheClass
+	It's applied to the div that contains the list.
+
+	.NameOfTheClass .normal
+	It's applied on every list item.
+
+	.NameOfTheClass .selected
+	It's applied on the selected item.
+
+	.NameOfTheClass .highlited
+	It's applied just on the characters that matched the search.
+
+
+Constructor
+
+	IncrementalSearch(field: HTMLInputElement, searchCallback: Function(IncrementalSearch, String): void, className: String)
+	
+		Generates an instance of IncrementalSearch.
+		
+			input input element that will be linked with the auto-complete
+			searchCallback callback function that will be called whenever the user changes the input content, the first parameter is the IncrementalSearch instance itself and the second parameter is the current input text
+			className CSS classname that will be used by the auto-complete
+		
+	
+
+
+Methods
+
+	IncrementalSearch.show(void): void
+	Shows the list.
+
+	IncrementalSearch.hide(void): void
+	Clears and hides the list.
+
+	IncrementalSearch.add(caption: String, [matchIndexes: Object = null], [data: Object = null]): void
+	
+		Adds an item to the list.
+		
+			caption text that will be shown in the list
+			matchIndexes
+			
+				position where the searched string (the current input text) was found, if there's more than one match
+				of the searched string and you want to highlight them, then just send an array containing all the indexes,
+				if you don't send anything, the text won't be highlighted
+			
+			data can be anything, this data will be associated with the item and, you'll have access to it through the IncrementalSearch's events
+		
+	
+
+	IncrementalSearch.next(void): void
+	Focus the next item on the list.
+
+	IncrementalSearch.previous(void): void
+	Focus the previous item on the list.
+
+	IncrementalSearch.highlite(index: Integer): void
+	
+		Focus a determinated item.
+		
+			index position of the item that should be focused
+		
+	
+
+	IncrementalSearch.select([index: Integer = CURRENT_ITEM]): void
+	
+		Selects the item specified in index, calls the onselect event and closes the list.
+		
+			index position of the item that should be selected
+		
+	
+
+
+Events
+
+	IncrementalSearch.onhighlite: Function(caption: String, data: Object): void
+	
+		Occurs whenever an item receives focus.
+		
+			caption contains the item text
+			data contains the data that was previously associated with the item
+		
+	
+
+	IncrementalSearch.onselect: Function(caption: String, data: Object): void
+	
+		Occurs whenever an item is selected.
+		
+			caption contains the item text
+			data contains the data that was previously associated with the item
+		
+	
+
+	IncrementalSearch.onshow: Function(void): void
+	Occurs when the list is shown.
+
+	IncrementalSearch.onhide: Function(void): void
+	Occurs when the list is hidden.
+
+
+Properties
+
+	IncrementalSearch.input: HTMLInputElement
+	References to the linked field.
+
+	IncrementalSearch.callback: Function(IncrementalSearch, String): void
+	References to the callback function.
+
+	IncrementalSearch.className: String
+	CSS classname that will be used by the IncrementalSearch.
+
+	IncrementalSearch.visible: Boolean
+	Indicates if the list is visible.
+
+	IncrementalSearch.c: HTMLElement
+	It's the &lt;div&gt; that contains the list (it's recreated whenever the list is hidden).
+
+	IncrementalSearch.i: Integer
+	Keeps the index of the focused item.
+
+	IncrementalSearch.l: Array
+	It's an array containing information about the items, each line is an item, the first column is the item text, the second contains the data that was associated with the item and the third is a reference to the &lt;div&gt; item on the list.

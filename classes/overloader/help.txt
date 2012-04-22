@@ -1,0 +1,24 @@
+Constructor
+
+	Overload(void)
+	Returns a callable function able to be overloaded.
+
+
+Methods
+
+	Overloader.overload(handler: Function, [argType0: Type, argType1: Type, ...]): void
+	
+		Overloads the object with a new function given the arguments types.
+		
+			handler function that will be overloaded
+			argType0: Type, argType1: Type, ... specifies the arguments types that the function defined in "handler" expects, if nothing is informed, the function assumes that "handler" doesn't receive arguments, you can use the default types (String, Number, Object, etc) as well as the types defined by you (a class...)
+		
+	
+
+	Overloader.unoverload([argType0: Type, argType1: Type, ...]): Boolean
+	
+		Unoverloads a function for which the arguments types combine perfectly, retorns "true" in case of success.
+		
+			argType0: Type, argType1: Type, ... specifies the arguments types that the function to be removed expects
+		
+	

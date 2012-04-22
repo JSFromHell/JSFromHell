@@ -1,0 +1,40 @@
+Methods
+
+	Cookie.isSupported(void): Boolean
+	Returns true only if the browser supports the writing, reading and remotion of cookies.
+
+	Cookie.write(name: String, value: String, [expires: Object = AT_END_OF_SESSION], [path: String = CURRENT_PATH], [domain: String = CURRENT_DOMAIN], [secure: Boolean = false]): Boolean
+	
+		Writes the cookie to the browser.
+		
+			name name of the cookie
+			value information to be stored on the browser				
+			expires defines the lifetime of the cookie, if empty, the cookie will be kept until the user closes the browser, can receive a Date object specifying the expiration date or a number indicating the amount of seconds that the cookie will be kept alive
+			path defines the path (in terms of url) where the cookie will be accessible
+			domain defines the domain where the cookie will be accessible
+			secure indicates if the cookie will be transmitted through a secure HTTPS connection, when defined as true, the cookie will be stored only if the there's a secure connection				
+		
+	
+	Cookie.exists(name: String): Boolean
+	
+		Returns true if the cookie exists.
+		
+			name name of the cookie
+		
+				
+	Cookie.read(name: String): String
+	
+		If the cookie exists, returns the value stored on it, otherwise returns an empty string.
+		
+			name name of the cookie
+		
+	
+	Cookie.remove(name: String, [path: String = CURRENT_PATH], [domain: String = CURRENT_DOMAIN]): Boolean
+	
+		Removes the cookie.
+		
+			name name of the cookie
+			path defines the path (in terms of url) where the cookie is be accessible
+			domain defines the domain where the cookie is be accessible		
+		
+				

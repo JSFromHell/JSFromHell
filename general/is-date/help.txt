@@ -1,0 +1,33 @@
+
+	isDate(y: Integer, m: Integer, d: Integer): Integer
+	
+		Checks a date and returns 0 if it's valid or one of the error codes bellow.
+		
+			y year
+			m month
+			d day
+		
+	
+
+			
+
+	isDate(date: String, matcher: RegExp, map: Object): Integer
+	
+		Checks a date and returns 0 if it's valid or one of the error codes bellow.
+		
+			date date in a string form
+			matcher regular expression responsible to find and store the day, month and year
+			map object containing the position where each date component is localized inside the regular expression. Its format is the following: {d: positionOfTheDay, m: positionOfTheMonth, y: positionOfTheYear}				
+		
+	
+			
+			
+Return codes
+
+	0 = Valid date
+	1 = Date format invalid (regular expression failed or amount of arguments != 3)
+	2 = Day isn't between 1 and 31
+	3 = Month isn't between 1 and 12
+	4 = On April, June, September and November there isn't the day 31
+	5 = On February the month has only 28 days
+	6 = Leap year, February has only 29 days

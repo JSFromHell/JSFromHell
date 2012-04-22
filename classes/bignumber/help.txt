@@ -1,0 +1,130 @@
+Constructor
+
+	BigNumber([number: Object = 0], [precision: Integer = BigNumber.defaultPrecision], [roundType: Integer = BigNumber.defaultRoundType])
+	
+		Generates a new instance of BigNumber.
+		
+			number accepts string, number or BigNumber
+			precision precision
+			roundType rounding type
+		
+	
+
+
+Rounding types
+
+	BigNumber.ROUND_HALF_EVEN Rounds 5-9 to the nearest even number.
+	BigNumber.ROUND_HALF_DOWN Rounds 0-5 to down.
+	BigNumber.ROUND_HALF_UP Rounds 5-9 to up.
+	BigNumber.ROUND_FLOOR Rounds towards to the lower (considerating the signal).
+	BigNumber.ROUND_CEIL Rounds towards to the higher (considerating the signal).
+	BigNumber.ROUND_DOWN Rounds towards to the the lower.
+	BigNumber.ROUND_UP Rounds towards to the higher.
+
+
+Class properties
+
+	BigNumber.defaultPrecision: Integer = 40 Precision that will be used by default.
+	BigNumber.defaultRoundType: Integer = BigNumber.ROUND_HALF_UP Default rounding type.
+
+
+Properties
+
+	BigNumber.precision: Integer Specifies the max precision (amount of numbers after the floating point).
+	BigNumber.roundType: Integer Indicates the rounding type that will be used when the number is higher than the precision
+
+
+Methods
+All the methods (except "set" and "round") that returns BigNumber, will return a new instance instead of the own object used in the calling.
+
+	BigNumber.set(n: Object): BigNumber
+	
+		Sets the value of the object with the specified number.
+		
+			n accepts string, number or a BigNumber
+		
+	
+
+	BigNumber.add(n: Object): BigNumber
+	
+		Does the sum.
+		
+			n accepts string, number or a BigNumber
+		
+	
+
+	BigNumber.subtract(n: Object): BigNumber
+	
+		Does the subtration.
+		
+			n accepts string, number or a BigNumber
+		
+	
+
+	BigNumber.multiply(n: Object): BigNumber
+	
+		Does the multiplication.
+		
+			n accepts string, number or a BigNumber
+		
+	
+
+	BigNumber.divide(n: Object): BigNumber
+	
+		Does the division.
+		
+			n accepts string, number or a BigNumber
+		
+	
+
+
+	BigNumber.mod(n: Object): BigNumber
+	
+		Does the division and returns the remainder.
+		
+			n accepts string, number or a BigNumber
+		
+	
+
+	BigNumber.pow(n: Object): BigNumber
+	
+		Does the power.
+		
+			n accepts string, number or a BigNumber
+		
+	
+
+	BigNumber.compare(n: Object): BigNumber
+	
+		Compares the numbers and returns -1 if "n" is higher, 0 if they are equal and 1 if "n" is lower.
+		
+			n accepts string, number or a BigNumber
+		
+	
+
+	BigNumber.negate(n: Object): BigNumber
+	
+		Returns "-number".
+		
+			n accepts string, number or a BigNumber
+		
+	
+
+	BigNumber.abs(n: Object): BigNumber
+	
+		Returns the modulus of the number.
+		
+			n accepts string, number or a BigNumber
+		
+	
+
+	BigNumber.intPart(n: Object): BigNumber
+	
+		Returs the integer part of the number.
+		
+			n accepts string, number or a BigNumber
+		
+	
+
+	BigNumber.round(void): void
+	Forces the rounding of the number.

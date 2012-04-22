@@ -1,0 +1,11 @@
+
+	arrange(vector: Array, n: Integer, [useIndex: Boolean = false]): Array
+	
+		Do the mathematical arrange (with repetition), groups made up by n elements (n &lt; array size), where the elements are distincted by the order or value. In the arrange with repetition repeated elements can appear in the same group.
+		The function returns a bidimensional array, where line = arrange and column = element.
+		
+			vector array that will be arranged
+			n amount of elements in each group
+			useIndex defines the return type, if true, returns just a "map" containing the indexes of the vector argument, otherwise, it uses the values of the array
+		
+	

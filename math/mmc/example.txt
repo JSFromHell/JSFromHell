@@ -1,0 +1,19 @@
+<form action="">
+<fieldset>
+	<legend>Mínimo Múltiplo Comum</legend>
+	<label for="numbers">Números:</label> <input type="text" id="numbers" value="2 3 4 7 8" />
+	<br /><input type="submit" value="Calcular MMC" />
+</fieldset>
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+
+//http://www.jsfromhell.com/geral/event-listener
+addEvent(document.forms[0], "submit", function(e){
+	alert(mmc(document.forms[0].numbers.value.split(" ")))
+	e.preventDefault();
+});
+
+//]]>
+</script>

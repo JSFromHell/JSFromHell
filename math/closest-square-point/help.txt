@@ -1,0 +1,13 @@
+
+	closestSquarePoint(px: Integer, py: Integer, x: Integer, y: Integer, width: Integer, height: Integer): Object
+	
+		Returns a object containing two properties (x and y), that specifies the limit point of a square in relation to a point.
+		
+			px x coord of the point
+			py y coord of the point
+			x x coord of the square origin point
+			y y coord of the square origin point
+			width width of the square
+			height height of the square
+		
+	

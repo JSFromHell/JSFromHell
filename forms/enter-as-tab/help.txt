@@ -1,0 +1,11 @@
+
+	enterAsTab(form: HTMLFormElement, [jumpAlways: Boolean = false]): void
+	
+		The function will add the tabulation through the enter key for all the inputs, except &lt;select&gt;'s (enter is used to
+		select an option) and &lt;textarea&gt;'s (enter is used to break lines).
+		When the last element is reached the default behaviour is to get back to the first element.
+		
+			form formulary that will receive the tabulation via enter
+			jumpAlways if true, the enter will jump even selects and textareas
+		
+	

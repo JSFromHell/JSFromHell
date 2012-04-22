@@ -1,0 +1,8 @@
+<script type="text/javascript">
+//<![CDATA[
+
+alert(dotLineLength(20, 0, 0, 0, 10, 0, true));
+alert(dotLineLength(20, 0, 0, 0, 10, 0));
+
+//]]>
+</script>

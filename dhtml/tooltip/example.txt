@@ -1,0 +1,46 @@
+<style type="text/css">
+	.RED{
+		padding: 15px;
+		margin-left: 25px;
+		border: 2px dashed #900;
+		background-color: #fee;
+		font: 8pt verdana;
+	}
+	.GREEN{
+		padding: 20px;
+		margin-left: 25px;
+		border: 1px solid #999;
+		background-color: #efe;
+		font: 12pt georgia, verdana;
+		font-weight: bold;
+	}
+	.box{
+		border: 3px solid #ccc;
+		width: 300px;
+		background: #eef;
+	}
+</style>
+<div id="a" class="box">
+	Tooltip verde estático contendo a data atual atualizada a cada segundo.
+	<br />Green static tooltip containing the current timestamp updated every second.
+</div><br />
+<div id="b" class="box">
+	Tooltip vermelho móvel (a caixa segue o mouse).
+	<br />Movable red tooltip (the box follows the mouse).
+</div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var t = new ToolTip(document.getElementById("b"), "primeira linha<br /><b>segunda linha</b>", "RED", true);
+var t2 = new ToolTip(document.getElementById("a"), "", "GREEN");
+
+setInterval((function(){
+	t2.setContent((new Date).toLocaleString());
+	return arguments.callee;
+})(), 1000);
+
+
+//]]>
+</script>

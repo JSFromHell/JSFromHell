@@ -1,0 +1,15 @@
+<script type="text/javascript">
+//<![CDATA[
+
+var n = 123456.789;
+
+document.write(
+	"n = ", n, "<br />",
+	"n.formatMoney() = ", n.formatMoney(), "<br />",
+	"n.formatMoney(0) = ", n.formatMoney(0), "<br />",
+	'n.formatMoney(6) = ', n.formatMoney(6), "<br />",
+	'n.formatMoney(2, "*", "#") = ', n.formatMoney(2, "*", "#"), "<br />"
+);
+
+//]]>
+</script>

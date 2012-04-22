@@ -1,0 +1,10 @@
+
+	Number.formatMoney([floatPoint: Integer = 2], [decimalSep: String = ","], [thousandsSep: String = "."]): String
+	
+		Returns the number into the monetary format.
+		
+			floatPoint amount of decimal places
+			decimalSep string that will be used as decimal separator
+			thousandsSep string that will be used as thousands separator
+		
+	

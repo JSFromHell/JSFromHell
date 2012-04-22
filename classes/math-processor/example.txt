@@ -1,0 +1,24 @@
+<form id="math" action="#">
+	<fieldset>
+	<legend>MathProcessor</legend>
+	<label>Expressão</label><input type="text" name="exp" value="(medium(sum(1, 0, 1), 1) + .5) / 2 * 2 + 1" /><br /><br />
+	<input type="submit" value="MathProcessor.parse()" />
+	</fieldset>
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+
+var p = new MathProcessor(), f = document.forms.math;
+
+addEvent(document.forms.math, "submit", function(e){
+	e.preventDefault();
+	try{
+		alert(p.parse(f.exp.value));
+	}catch(e){
+		alert(e);
+	}
+});
+
+//]]>
+</script>

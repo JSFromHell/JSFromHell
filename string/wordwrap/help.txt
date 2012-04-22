@@ -1,0 +1,14 @@
+String.wordWrap(maxLength: Integer, [breakWith: String = "\n"], [cutType: Integer = 0]): String
+
+	Returns an string with the extra characters/words "broken".
+	
+		maxLength maximum amount of characters per line
+		breakWtih string that will be added whenever it's needed to break the line
+		cutType 
+			
+				0 = words longer than "maxLength" will not be broken
+				1 = words will be broken when needed
+				2 = any word that trespass the limit will be broken
+			
+		
+	

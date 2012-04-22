@@ -1,0 +1,11 @@
+<script type="text/javascript">
+//<![CDATA[
+
+document.write(
+	'"', s = ".......Exemplo=======", '".trim(".=") = ', s.trim(".="), "<br />",
+	'"', s = ".......Exemplo.......", '".trim(".", 1) = ', s.trim(".", 1), "<br />",
+	'"', s = "Exemplo11111112222222", '".trim("12") = ', s.trim("21")
+);
+
+//]]>
+</script>

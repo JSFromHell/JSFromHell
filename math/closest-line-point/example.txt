@@ -1,0 +1,17 @@
+<div id="linha" style="position: absolute; background: #eef; width: 200px; height: 200px; left:200px; top: 200px;">Mova o mouse fora da área do retângulo, o ângulo foi setado randomicamente.</div>
+<div id="dot" style="position: absolute; border:1px solid #000; background: #fee; width: 20px; height: 20px;"></div>
+
+<script type="text/javascript">
+//<![CDATA[
+
+var angulo = Math.random() * 256, line = document.getElementById("linha"), box = document.getElementById("dot");
+
+//http://www.jsfromhell.com/geral/event-listener
+addEvent(document, "mousemove", function(e){
+	var p = closestLinePoint(e.clientX, e.clientY, line.offsetLeft + line.offsetWidth / 2, line.offsetTop + line.offsetHeight / 2, angulo);
+	box.style.left = (p.x - box.offsetWidth / 2) + "px";
+	box.style.top = (p.y - box.offsetHeight / 2) + "px";
+});
+
+//]]>
+</script>

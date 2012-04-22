@@ -1,0 +1,9 @@
+<script type="text/javascript">
+//<![CDATA[
+
+document.write("Jonas Jones Matrix Maytrix".replace(/\w+/g, function(s){
+	return "\"" + s +"\".soundex() = " + s.soundex() + "<br />";
+}));
+
+//]]>
+</script>

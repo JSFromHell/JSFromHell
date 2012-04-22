@@ -1,0 +1,7 @@
+<script type="text/javascript">
+//<![CDATA[
+
+alert(lineLength(0, 0, 10, 10));
+
+//]]>
+</script>

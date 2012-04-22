@@ -1,0 +1,14 @@
+
+	dotLineIntersection(px: Integer, py: Integer, x0: Integer, y0: Integer, x1: Integer, y1: Integer): Object
+	
+		Returns an object containing two properties (x and y), that specify the intersection point between a
+		line and an imaginary line that passes in the point and it's also perpendicular (makes an angle of 90°) to the same line.
+		
+			px x coord of the point
+			py y coord of the point
+			x0 x coord of the line's A point
+			y0 y coord of the line's A point
+			x1 x coord of the line's B point
+			y1 y coord of the line's B point
+		
+	

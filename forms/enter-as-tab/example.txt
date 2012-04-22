@@ -1,0 +1,21 @@
+<form action="" id="form">
+	<fieldset>
+	<legend>Tabulação via enter</legend>
+	<label>input text</label><input type="text" />
+	<label>input text</label><input type="text" />
+	<label>input text</label><input disabled="disabled" type="text" />
+	<label>input radio</label><input type="radio" name="aaa" /> opção 1
+	<input type="radio" name="aaa" checked="checked" /> opção 2
+	<label>textarea</label><textarea rows="3" cols="15">aaaaaa pode dar enter q ele naum pula hahah</textarea>
+	<label>textarea</label><select><option>opção blablablabla</option><option>opção bleblebleble</option></select>
+	<label>input text</label><input type="text" />
+	</fieldset>
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+
+enterAsTab(document.forms.form);
+
+//]]>
+</script>

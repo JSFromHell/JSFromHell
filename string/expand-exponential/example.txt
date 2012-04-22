@@ -1,0 +1,12 @@
+<script type="text/javascript">
+//<![CDATA[
+
+document.write(
+	'"', s = "-13.441e+5", '".expandExponential() = ', s.expandExponential(), '<br />',
+	'"', s = "1.12300e-1", '".expandExponential() = ', s.expandExponential(), '<br />',
+	"n = ", n = 100000000000000000000000000000000000, " => String(n).expandExponential() = ",
+	String(n).expandExponential()
+);
+
+//]]>
+</script>

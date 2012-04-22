@@ -1,0 +1,9 @@
+
+	permute(vector: Array, [useIndex: Boolean = false]): Array
+	
+		The function returns a bidimensional array (where line = group and column = element), containing all the possibilities to group the elements without repeat any of them.
+		
+			vector array that will be permuted
+			useIndex defines the return type, if true, returns just a "map" containing the indexes of the vector argument, otherwise, it uses the values of the array
+		
+	

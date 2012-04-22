@@ -1,0 +1,72 @@
+Constructor
+
+	Dragger(element: HTMLElement, [autoBind: Boolean = false])
+	Generates an instance of Dragger.
+		
+			element element that will receive the hability to be dragged
+			autoBind if true, adds the default drag behaviour to the element, starting up by pressing a mouse button and finishing when it gets released
+		
+	
+
+
+
+Methods
+
+	Dragger.start([center: Boolean = true]): void
+	
+		Starts dragging the element.
+		
+			center if true, the object will be centralized in the current position of the mouse if the mouse isn't already over the element
+		
+	
+
+	Dragger.stop(): void
+	Stops dragging the element.
+
+	Dragger.addFilter(filter: Function(): void, [arg0, arg1, arg2, argN, ...]): void
+	
+		Adds a movimentation filter to the object, allowing additional arguments to be sent to the filter.
+		
+			filter
+			
+				this function will be called whenever the mouse is moved, its scope (this), contains two properties,
+				"x" and "y", by changing any of them you change the current object position
+			
+			arg0, arg1, arg2, argN, ...
+			
+				the specified arguments after the filter will be sent as arguments to the own filter, in the same order they were specified
+			
+		
+	
+
+
+Properties
+
+	Dragger.object: HTMLElement
+	object linked within the Dragger
+
+	Dragger.dragging: Boolean
+	tells if the object is beeing dragged
+
+	Dragger.mouse: Object
+	keeps the current mouse position, it's composed by two properties, x and y
+
+
+
+Events
+
+	Dragger.onstart: function(void): void
+	
+		Occurs when the drag starts.
+	
+	Dragger.ondrag: function(event: Event): void
+	
+		Occurs while the object is beeing dragged.
+		
+			event event object
+		
+	
+	Dragger.onstop: function(void): void
+	
+		Occurs when the drag finishes.
+	

@@ -1,0 +1,11 @@
+<script type="text/javascript">
+//<![CDATA[
+
+var s = "aáéíóúe";
+document.write(
+	('UTF8.encode("' + s + '") = ').bold(), UTF8.encode(s), "<br />",
+	('UTF8.decode(UTF8.encode("' + s + '"))) = ').bold(), UTF8.decode(UTF8.encode(s))
+);
+
+//]]>
+</script>

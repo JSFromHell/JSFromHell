@@ -1,0 +1,8 @@
+
+	mdc(numbers: Array): Integer
+	
+		Returns the greatest number able to divide all the numbers in the first argument, the greatest common divisor.
+		
+			numbers array of integer numbers
+		
+	

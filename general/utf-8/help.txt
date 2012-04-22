@@ -1,0 +1,12 @@
+
+	UTF8.encode(s: String): String
+	
+		Converts from ANSI to UTF-8
+		s string to be converted
+	
+	
+	UTF8.decode(s: String): String
+	
+		Converts from UTF-8 to ANSI
+		s string to be converted
+		

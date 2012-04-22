@@ -1,0 +1,21 @@
+<form action="" id="form">
+	<fieldset>
+	<legend>Tabulação automática</legend>
+	<label>maxlenght = 1</label><input type="text" maxlength="1" />
+	<label>maxlenght = 2</label><input type="text" maxlength="2" />
+	<label>maxlenght = não setado</label><input type="text" />
+	<label>maxlenght = 3</label><input type="text" maxlength="3" />
+	<label>disabled</label><input type="text" maxlength="4" disabled="disabled" />
+	<label>select simples</label><select><option>opção blablablabla</option>
+		<option>opção bleblebleble</option></select>
+	<label>maxlenght = 6</label><input type="text" maxlength="6" />
+	</fieldset>
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+
+autoTab(document.forms.form);
+
+//]]>
+</script>

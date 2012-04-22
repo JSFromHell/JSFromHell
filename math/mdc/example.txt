@@ -1,0 +1,19 @@
+<form action="">
+<fieldset>
+	<legend>Greatest Common Divisor</legend>
+	<label for="numbers">Numbers separated by espace:</label> <input type="text" id="numbers" value="32 48 8" />
+	<br /><input type="submit" value="Calculate GCD" />
+</fieldset>
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+
+//http://www.jsfromhell.com/geral/event-listener
+addEvent(document.forms[0], "submit", function(e){
+	alert(mdc(document.forms[0].numbers.value.split(" ")))
+	e.preventDefault();
+});
+
+//]]>
+</script>

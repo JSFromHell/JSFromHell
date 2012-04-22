@@ -1,0 +1,30 @@
+<script type="text/javascript" src="/js/graphical-plotter.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+//http://jsfromhell.com/dhtml/graphical-plotter
+var canvas = new Canvas;
+canvas.pen.color = "#f00";
+canvas.pixelSize = 5;
+
+var points = {
+	'p0': Bezier.point(0, 70),
+	'p1': Bezier.point(100, 20),
+	'c0': Bezier.point(50, 20),
+	'c1': Bezier.point(50, 70)
+};
+
+var bezier = new Bezier(points.p0, points.p1, points.c0, points.c1);
+bezier.plot(function(p){
+	canvas.pixel(p.x, p.y);
+});
+
+canvas.pen.color = "blue";
+canvas.line(points.p0.x, points.p0.y, points.c0.x, points.c0.y);
+
+canvas.pen.color = "green";
+canvas.line(points.p1.x, points.p1.y, points.c1.x, points.c1.y);
+
+//]]>
+</script>

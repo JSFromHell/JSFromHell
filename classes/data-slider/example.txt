@@ -1,0 +1,31 @@
+<form action="">
+	<fieldset>
+	<legend>Rotacionador de objetos</legend>
+	<div id="dados">:]</div>
+	<input type="button" name="stop" value="parar" />
+	<input type="button" name="previous" value="anterior" />
+	<input type="button" name="next" value="próximo" />
+	<input type="button" name="play" value="play" />
+	</fieldset>
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+
+function handler(data){
+	var x = document.getElementById("dados");
+	x.innerHTML = '<a href="' + data[1] + '">'+ data[0] +"</a>";
+}
+
+var x = new DataSlider(handler, 1000, ["ABCDE", "http://www.abcde.com"], ["FGHIJ", "http://www.fghij.com.br"], ["KLMNO", "http://www.klmno.com"]);
+x.play();
+
+var f = document.forms[0];
+//http://www.jsfromhell.com/geral/event-listener
+addEvent(f.play, "click", function(){x.play();});
+addEvent(f.stop, "click", function(){x.stop();});
+addEvent(f.next, "click", function(){x.stop(); x.next();});
+addEvent(f.previous, "click", function(){x.stop(); x.previous();});
+
+//]]>
+</script>

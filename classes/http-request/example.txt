@@ -1,0 +1,34 @@
+<fieldset>
+	<legend>HTTPRequest example</legend>
+	<input type="button" value="POST request with generic listener and params passage" onclick="genericHandler()" />
+	<br /><input type="button" value="GET request with specific listener (binded on load and end)" onclick="specificHandler()" />
+
+<script type="text/javascript">
+//<![CDATA[
+
+var r = new HTTPRequest;
+
+function myHandler(o){
+	alert("Current event = " + r.events[o.readyState] +
+	'\nAvailable "responseText.length" = ' + o.responseText.length);
+}
+function genericHandler(){
+	r.post(location.href, {param: "abcde", name: "Jonas", site: "http://jsfromhell.com"}, myHandler);
+}
+function specificHandler(){
+	r.get(location.href, null, {load: myHandler, end: myHandler});
+}
+document.write(
+	"<br />Supports XMLHTTPRequest = ".bold() + r.isSupported(),
+	'<br />Encoded with the default filter ("encodeURIComponent") = '.bold() + r.formatParams({nameA: "aeiou", nameB: "αινσϊ"})
+);
+
+r.filter = escape;
+document.write('<br />Encoded with "escape" filter = '.bold() + r.formatParams({nameA: "aeiou", nameB: "αινσϊ"}));
+
+r.filter = null;
+document.write("<br />Encoded with no filtering = ".bold() + r.formatParams({nameA: "aeiou", nameB: "αινσϊ"}));
+
+//]]>
+</script>
+</fieldset>

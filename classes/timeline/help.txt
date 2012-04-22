@@ -1,0 +1,45 @@
+Constructor
+
+	TimeLine(fps: Number, frames: Number)
+	
+		Generates an instance of TimeLine.
+		
+			fps animation velocity in fps
+			frames amount of frames
+				
+	
+
+
+Properties
+
+	TimeLine.current: Integer Keep the current frame.
+	TimeLine.frames: Integer Amount of frames.			
+	TimeLine.fps: Integer Velocity in frames per second.
+	TimeLine.running: Boolean Indicates if the animation is running.
+	TimeLine.time: Date Keeps the date of when the animation started.	
+
+
+Methods
+
+	TimeLine.start([current: Number = 0]): void
+	
+		Starts the animation.
+		
+			current defines the initial frame, the default is 0
+		
+		
+
+	TimeLine.stop(void): void
+	Stops the animation.
+
+
+Events
+
+	TimeLine.onstart: function(): void
+	Called when starting the animation.
+			
+	TimeLine.onframe: function(): void
+	Called for each animation frame.
+			
+	TimeLine.onstop: function(): void
+	Called when stopping the animation.

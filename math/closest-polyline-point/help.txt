@@ -1,0 +1,14 @@
+
+	closestPolyLinePoint( px: Integer, py: Integer, x0: Integer, y0: Integer, x1: Integer, y1: Integer, ...): Object
+	
+		Returns an object containing two properties (x and y), that specifies the limit point of a set of lines in relation to a point.
+		
+			px point's x coord
+			py point's y coord
+			x0 x coord of the line's A point
+			y0 y coord of the line's A point
+			x1 x coord of the line's B point
+			y1 y coord of the line's B point
+			... unlimited set of 2 points
+		
+	

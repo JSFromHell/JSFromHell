@@ -1,0 +1,38 @@
+<style type="text/css">
+#menu{position: absolute; top: 80px; height: 500px; width: 200px; display: none; border: 1px solid #999; background: #eef;}
+</style>
+
+Example of how to fix the Internet Explorer problem of &lt;select&gt; elements superposing other elements. The menu will make a "hittest" against all the selects and hide the ones that superposes the menu.
+
+<div id="menu">
+	<input type="button" onclick="hide();" value="Hide Menu" />
+</div>
+<form action="">
+	<fieldset>
+	<strong>DIV x SELECT</strong>
+	<br /><select><option>DIV OVER SELECT DIV OVER SELECT DIV OVER SELECT</option></select>
+	<input type="button" onclick="show();" value="Show Menu" />
+	</fieldset>
+</form>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var m = document.getElementById("menu");
+
+function show(){
+	m.style.display = "block";
+	if(!m.selects)
+		m.selects = hitTest(m, document.getElementsByTagName("select"));
+	for(var i = m.selects.length; i; m.selects[--i].style.visibility = "hidden");
+
+}
+
+function hide(){
+	m.style.display = "none";
+	for(var i = m.selects.length; i; m.selects[--i].style.visibility = "visible");
+}
+
+//]]>
+</script>

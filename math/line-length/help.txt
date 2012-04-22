@@ -1,0 +1,11 @@
+
+	lineLength(x0: Integer, y0: Integer, x1: Integer, y1: Integer): Double
+	
+		Returns the distance from a point A to a point B.
+		
+			x0 x coord of the line's A point
+			y0 y coord of the line's A point
+			x1 x coord of the line's B point
+			y1 y coord of the line's B point
+		
+	

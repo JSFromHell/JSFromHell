@@ -1,0 +1,74 @@
+Constructor
+
+	HTTPRequest(void)
+	Generates a new instance of HTTPRequest. On the requests the class will identify itself on the HTTP_USER_AGENT header as "XMLHTTPRequest"
+
+
+Properties
+
+	HTTPRequest.filter: Function(data: String): String function that will be called to filter the values of the parameters, by default it will be used the "encodeURIComponent" function
+
+
+
+Methods
+
+	Observation:
+	There are two ways of setting the callbacks, if you pass a simple function, it will be called for all the events 
+	of the XMLHTTPRequest, the other way is to set just the desired events on the callback, using the following sintax:
+	{eventName: callback, eventName2: callback, ...}, where the allowed events are:
+	
+		open = called after the request start
+		sent = called after the request data is sent
+		load = called multiple timples while the content is retrieved
+		end = called in the transference end
+	
+
+
+	HTTPRequest.isSupported(void): Boolean
+	Returns true if the browser supports the creation of the XMLHTTPRequest object.
+	
+	HTTPRequest.get(url: String, [params: Object = null], [handler: Function(xhr: XMLHTTPRequest): void = null], [waitResponse: Boolean = false]): Boolean
+	
+		Makes a request through GET and returns true if the request is created succesfully.
+		
+			url request url
+			params parameters hashmap, it will be serialized and added on the end of the url as query string
+			handler callback that will be called on the XMLHTTPRequest events, receives as argument the own XMLHTTPRequest object
+			waitResponse indicates if the request will be synchronized (true) or asynchronized (false)				
+		
+	
+
+	HTTPRequest.post(url: String, [params: Object = null], [handler: Function(xhr: XMLHTTPRequest): void = null], [waitResponse: Boolean = false]): Boolean
+	
+		Makes a request through POST and returns true if the request is created succesfully.
+		
+			url request url
+			params parameters hashmap, it will be serialized and on sent within the POST
+			handler callback that will be called on the XMLHTTPRequest events, receives as argument the own XMLHTTPRequest object
+			waitResponse indicates if the request will be synchronized (true) or asynchronized (false)				
+		
+	
+
+	HTTPRequest.request(method: String, url: String, [params: Object = null], [handler: Function(xhr: XMLHTTPRequest): void = null], [headers: Object = null] [waitResponse: Boolean = false]): Boolean
+	
+		Makes a request and returns true if the request is created succesfully.
+		
+			method method that will be used to make the request		
+			url request url
+			params parameters hashmap, it will be serialized and on sent within the POST
+			handler callback that will be called on the XMLHTTPRequest events, receives as argument the own XMLHTTPRequest object
+			headers hashmap containing additional headers		
+			waitResponse indicates if the request will be synchronized (true) or asynchronized (false)				
+		
+				
+
+	HTTPRequest.getConnection(void): XMLHTTPRequest
+	Returns a new XMLHTTPRequest object or null on error.
+
+	HTTPRequest.formatParams(params: Object): String
+	
+		Serializes the hashmap into the "query string" format.
+		
+			params object which the properties will be serialized
+			
+				

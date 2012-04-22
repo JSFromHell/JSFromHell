@@ -1,0 +1,13 @@
+<script type="text/javascript">
+//<![CDATA[
+
+var s = "Jonas";
+document.write(
+	'<h2>S = '.bold(), s, "</h2>",
+	'S.pad(20, "[]", 0) = '.bold(), s.pad(20, "[]", 0), "<br />",
+	'S.pad(20, "[====]", 1) = '.bold(), s.pad(20, "[====]", 1), "<br />",
+	'S.pad(20, "~", 2) = '.bold(), s.pad(20, "~", 2)
+);
+
+//]]>
+</script>

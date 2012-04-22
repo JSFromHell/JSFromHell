@@ -1,0 +1,36 @@
+Constructor
+
+	Bezier(p0: Object, p1: Object, c0: Object, c1: Object)
+	
+		Generates an instance de Bezier. The points can be generated from the method "Bezier.point".
+		
+			p0 defines the origin point of the curve 
+			p1 defines the end point of the curve
+			c0 defines the point which has influence over the p0 argument
+			c1 defines the point which has influence over the p1 argument			
+			
+	
+
+
+Class Methods
+
+	Bezier.point(x: Integer, y: Integer): Object
+	Returns an object containing two properties, x and y.
+
+
+Methods
+
+	Bezier.getCoordinates(position: Float): Object
+	
+		Returns the coordinates of a point given its "position" on the curve.
+		
+			position number from 0 up to 1 which specifies the position of the point (example: 0 = beginning, 0.5 = middle, 1 = end)
+		
+	
+	Bezier.plot(callback: Function(point: Object, currentPosition: Float): void): Object
+	
+		Draws the curve.
+		
+			callback function which will be called for each point that needs to be drawed, receives as first argument the coordinates of the point (contains the x and y properties), the second argument is the current position, which varies from 0 (0%) up to 1 (100%)
+		
+	

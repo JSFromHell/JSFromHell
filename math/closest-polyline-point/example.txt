@@ -1,0 +1,25 @@
+<p>Mova o mouse fora da área das linhas</p>
+
+<div id="linhaA" style="position: absolute; 100px; border: solid 1px #000; font-size:1px; background: #000; width: 200px; height: 0px; left:200px; top: 200px;"></div>
+<div id="linhaB" style="position: absolute; 100px; border: solid 1px #000; font-size:1px; background: #000; height: 200px; width: 0px; left:400px; top: 200px;"></div>
+<div id="dot" style="position: absolute; border:1px solid #000; background: #fee; width: 20px; height: 20px;"></div>
+
+<script type="text/javascript">
+//<![CDATA[
+
+var lineA = document.getElementById("linhaA"),
+lineB = document.getElementById("linhaB");
+box = document.getElementById("dot");
+
+//http://www.jsfromhell.com/geral/event-listener
+addEvent(document, "mousemove", function(e){
+	var p = closestPolyLinePoint(e.clientX, e.clientY,
+		lineA.offsetLeft, lineA.offsetTop, lineA.offsetLeft + lineA.offsetWidth, lineA.offsetTop + lineA.offsetHeight,
+		lineB.offsetLeft, lineB.offsetTop, lineB.offsetLeft + lineB.offsetWidth, lineB.offsetTop + lineB.offsetHeight
+	);
+	box.style.left = (p.x - box.offsetWidth / 2) + "px";
+	box.style.top = (p.y - box.offsetHeight / 2) + "px";
+});
+
+//]]>
+</script>

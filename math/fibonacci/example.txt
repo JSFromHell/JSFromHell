@@ -1,0 +1,7 @@
+<script type="text/javascript">
+//<![CDATA[
+
+for(var i = 11; --i > -11; document.write(("fibonacci(" + i + ") = ").bold(), fibonacci(i), "<br />"));
+
+//]]>
+</script>

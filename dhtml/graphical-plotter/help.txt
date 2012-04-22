@@ -1,0 +1,63 @@
+Constructor
+
+	Canvas(void)
+	Generates an instance of Canvas.
+
+
+Properties
+
+	Canvas.penPos.x: Integer Current "x" coord of the pen.
+	Canvas.penPos.y: Integer Current "y" coord of the pen.
+	Canvas.pen.style: String Pen style (it should be setted with css border styles: "dashed", "solid", ...).
+	Canvas.pen.size: Integer Pen width.
+	Canvas.pen.color: String Pen color.
+	Canvas.pixelSize: Integer Imaginary size of the pixel in the screen.
+	Canvas.brush.* Not supported.
+
+
+Methods
+
+	Canvas.pixel(x: Integer, y: Integer): Canvas
+	
+		Draws a pixel in the position (x,y) and returns the own canvas instance.
+	
+	Canvas.moveTo(x: Integer, y: Integer): Canvas
+	
+		Moves the pen to the position (x,y) and returns the own canvas instance.
+	
+	Canvas.moveBy(x: Integer, y: Integer): Canvas
+	
+		Moves the pen to the position (penPos.x + x, penPos.y + y ) and returns the own canvas instance.
+	
+	Canvas.lineTo(x: Integer, y: Integer): Canvas
+	
+		Draws a line from (penPos.x, penPos.y) to (x,y) and returns the own canvas instance.
+	
+	Canvas.lineBy(x: Integer, y: Integer): Canvas
+	
+		Draws a line from (penPos.x, penPos.y) to (penPos.x + x, penPos.y + y ) and returns the own canvas instance.
+	
+	Canvas.line(x1: Integer, y1: Integer, x2: Integer, y2: Integer): Canvas
+	
+		Draws a line from (x1,y1) to (x2,y2) and returns the own canvas instance.
+	
+	Canvas.arc(x: Integer, y: Integer, ray: Integer, startAngle: Integer, degrees: Integer): Canvas
+	
+		Draws an arc starting from the angle "startAngle" to "startAngle + degrees", with center in (x,y), having ray equals to "ray" and returns the own canvas instance.
+	
+	Canvas.rectangle(x: Integer, y: Integer, width: Integer, height: Integer, rotation: Integer): Canvas
+	
+		Draws a square with origin in (x,y), width equals to "width", height equals to "height" (rotation não é suportado) and returns the own canvas instance.
+	
+	Canvas.curveTo(cx: Integer, cy: Integer, x: Integer, y: Integer): Canvas
+	
+		Not supported.
+	
+	Canvas.polyBezier(points: Array): Canvas
+	
+		Not supported.
+	
+	Canvas.path(points: Array): Canvas
+	
+		Not supported.
+	

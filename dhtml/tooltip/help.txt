@@ -1,0 +1,35 @@
+Constructor
+
+	ToolTip(element: HTMLElement, text: String, className: String, [followMouse: Boolean = false])
+	
+		Adds tooltip for an element.
+		
+			element element that will be linked with the tooltip
+			text text or html that will shown in the tooltip
+			className CSS classname that will be used by the tooltip
+			followMouse specifies if the tooltip window must follow the mouse or stay fixed in the first place where it appeared
+		
+	
+
+
+
+Properties
+
+	ToolTip.o: HTMLElement
+	Reference to the ToolTip element.
+	ToolTip.t: String
+	Text/HTML that will be shown.
+	ToolTip.f: Boolean
+	Specifies if the tooltip window should follow the mouse.
+
+
+
+Methods
+
+	ToolTip.setContent(content: String): void
+	
+		Changes the content shown by the tooltip.
+		
+			content new content
+		
+	

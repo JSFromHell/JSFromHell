@@ -1,0 +1,29 @@
+<script type="text/javascript">
+//<![CDATA[
+
+function getMessage(r){
+	return r == 0 ? "Valid date"
+	: r == 1 ? "Invalid date format"
+	: r == 2 ? "Invalid day"
+	: r == 3 ? "Invalid month"
+	: r == 4 ? "In April, June, September and November the month has only 30 days"
+	: r == 5 ? "February has only 28 days"
+	: r == 6 && "It's leap year, February has only 29 days";
+};
+
+var tests = [
+	isDate("22/07/1984", /^([0-9]{1,2})[\/]([0-9]{1,2})[\/]([0-9]{1,4})$/, {d: 1, m: 2, y: 3}),
+	isDate("1984-07-22", /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/, {d: 3, m: 2, y: 1}),
+	isDate("07-22-1984", /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/, {d: 3, m: 2, y: 1}),
+	isDate(2000, 1, 32),
+	isDate(2000, 0, 1),
+	isDate(2000, 4, 31),
+	isDate(2001, 2, 29),
+	isDate(2004, 2, 30)
+];
+
+for(var i = -1, l = tests.length; ++i < l;)
+	document.write(getMessage(tests[i]), "<br>");
+
+//]]>
+</script>

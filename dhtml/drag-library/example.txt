@@ -1,0 +1,88 @@
+<style type="text/css">
+.box{position: absolute; border: 1px solid #999; width: 50px; text-align: center; font: 12px monospace; padding: 5px 0px;}
+#customized{top: 150px; width: 200px; height: 200px; background-color: #fef;}
+#circle{background-color: #fee;}
+#square{background-color: #ccc; left: 50px;}
+#freeLine{background-color: #eff; left: 100px;}
+#polyLine{background-color: #efe; left: 150px;}
+#free{background-color: #eef; left: 200px;}
+</style>
+
+<div class="box" id="free">Free Drag</div>
+<div class="box" id="polyLine">Poly Lines</div>
+<div class="box" id="freeLine">Free Line</div>
+<div class="box" id="square">Square Limit</div>
+<div class="box" id="circle">Circle Limit</div>
+
+<div id="customized" class="box">Hold the SHIFT key to start moving this box by the center, hold the CTRL to move it without centering. Leave the key to stop.</div>
+
+<script type="text/javascript">
+//<![CDATA[
+
+//simple example
+new Dragger(document.getElementById("free"), true);
+
+//customized dragging
+o = new Dragger(document.getElementById("customized"));
+addEvent(document, "keydown", function(e){
+	if(e.shiftKey || e.ctrlKey)
+		o.start(e.shiftKey);
+});
+addEvent(document, "keyup", function(e){
+	if(!e.shiftKey && !e.ctrlKey)
+		o.stop();
+});
+
+//examples using filters
+function lineLength(x, y, x0, y0){
+	return Math.sqrt((x -= x0) * x + (y -= y0) * y);
+}
+SQUARE = function(x, y, w, h){
+	this.x = this.x < x ? x : this.x > x + w ? x + w : this.x,
+	this.y = this.y < y ? y : this.y > y + h ? y + h : this.y;
+};
+new Dragger(document.getElementById("square"), true).addFilter(SQUARE, 200, 200, 400, 200);
+
+CIRCLE = function(x, y, ray){
+	var tg;
+	lineLength(this.x, this.y, x += ray, y += ray) > ray && (this.x = Math.cos(tg = Math.atan2(this.y - y, this.x - x)) * ray + x, this.y = Math.sin(tg) * ray + y);
+};
+new Dragger(document.getElementById("circle"), true).addFilter(CIRCLE, 100, 100, 100);
+
+LINE = function(x, y, angle){
+	if(!(angle % 90))
+		return this.x = x;
+	var tg = Math.tan(-angle * Math.PI / 180);
+	Math.sin(45 * Math.PI / 180) >= Math.sin(angle * Math.PI / 180) ? this.y = (this.x - x) * tg + y : this.x = (this.y - y) / tg + x;
+};
+new Dragger(document.getElementById("freeLine"), true).addFilter(LINE, 200, 400, 60);
+
+POLY = function(x0, y0, x1, y1, etc, etc, etc){
+	function dotLineLength(x, y, x0, y0, x1, y1, o){
+		if(o && !(o = function(x, y, x0, y0, x1, y1){
+			if(!(x1 - x0)) return {x: x0, y: y};
+			else if(!(y1 - y0)) return {x: x, y: y0};
+			var left, tg = -1 / ((y1 - y0) / (x1 - x0));
+			return {x: left = (x1 * (x * tg - y + y0) + x0 * (x * - tg + y - y1)) / (tg * (x1 - x0) + y0 - y1), y: tg * left - tg * x + y};
+		}(x, y, x0, y0, x1, y1), o.x >= Math.min(x0, x1) && o.x <= Math.max(x0, x1) && o.y >= Math.min(y0, y1) && o.y <= Math.max(y0, y1))){
+			var l1 = lineLength(x, y, x0, y0), l2 = lineLength(x, y, x1, y1);
+			return l1 > l2 ? l2 : l1;
+		}
+		else{
+			var a = y0 - y1, b = x1 - x0, c = x0 * y1 - y0 * x1;
+			return Math.abs(a * x + b * y + c) / Math.sqrt(a * a + b * b);
+		}
+	}
+	for(var a = [].slice.call(arguments, 0), lines = []; a.length > 3; lines[lines.length] = {y1: a.pop(), x1: a.pop(), y0: a.pop(), x0: a.pop()});
+	if(!lines.length)
+		return;
+	for(var l, i = lines.length - 1, o = lines[i], lower = {i: i, l: dotLineLength(this.x,	this.y, o.x0, o.y0, o.x1, o.y1, 1)}; i--; lower.l > (l = dotLineLength(this.x, this.y, (o = lines[i]).x0, o.y0, o.x1, o.y1, 1)) && (lower = {i: i, l: l}));
+	this.y < Math.min((o = lines[lower.i]).y0, o.y1) ? this.y = Math.min(o.y0, o.y1) : this.y > Math.max(o.y0, o.y1) && (this.y = Math.max(o.y0, o.y1));
+	this.x < Math.min(o.x0, o.x1) ? this.x = Math.min(o.x0, o.x1) : this.x > Math.max(o.x0, o.x1) && (this.x = Math.max(o.x0, o.x1));
+	Math.abs(o.x0 - o.x1) < Math.abs(o.y0 - o.y1) ? this.x = (this.y * (o.x0 - o.x1) - o.x0 * o.y1 + o.y0 * o.x1) / (o.y0 - o.y1) : this.y = (this.x * (o.y0 - o.y1) - o.y0 * o.x1 + o.x0 * o.y1) / (o.x0 - o.x1);
+};
+b = new Dragger(document.getElementById("polyLine"), true);
+b.addFilter(POLY, 0, 0, 200, 200, 200, 200, 400, 200, 400, 200, 600, 0);
+
+//]]>
+</script>

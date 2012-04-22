@@ -1,0 +1,12 @@
+
+	closestCirclePoint( px: Integer, py: Integer, x: Integer, y: Integer, ray: Double ): Object
+	
+		Retorna um objeto contendo duas propriedades (x e y), que especificam o ponto limítrofe de um círculo em relação a um ponto.
+		
+			px point's x coord
+			py point's y coord
+			x circle's x coord origin
+			y circle's y coord origin
+			ray circle's ray (length divided by 2)
+		
+	

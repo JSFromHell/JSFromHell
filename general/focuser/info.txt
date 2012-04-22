@@ -1,0 +1,16 @@
+JSFromHell.com @ http://jsfromhell.com
+--------------------------------------
+
+Name: Focuser
+URL: http://jsfromhell.com/geral/focuser
+Author: Jonas Raoni Soares Silva
+Created: 2006.02.14
+Modified: 2006.08.17
+Description:
+Extends elements that are unable to receive focus, allowing them to handle the following events: keypress, keydown, keyup, blur and focus.
+
+To keep yourself updated, sign up the ATOM feed at: http://jsfromhell.com/en/feed/atom.xml
+
+We authorize the copy and modification of all the codes on the site, since the original author credits are kept
+In the case you have a code that you consider indispensable, job offers, feature requests, suggestions or if you've found problems on the site, contact us.
+We don't assume any responsibility for any kind of damage, direct or indirect, that can be raised upon the utilization of our codes/site or any site that's available through hiperlinks in our site.

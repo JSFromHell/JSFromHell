@@ -1,0 +1,14 @@
+<script type="text/javascript">
+//<![CDATA[
+
+var s = "Jonas Raoni 5.3.5";
+
+document.write(
+	"<h2>S = ", s, "</h2>",
+	"S.rot13() = ", s.rot13(),
+	"<br />S.rot13().rot13() = ", s.rot13().rot13()
+
+);
+
+//]]>
+</script>

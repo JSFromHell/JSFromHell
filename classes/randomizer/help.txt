@@ -1,0 +1,40 @@
+Constructor
+
+	Randomizer(type: RandomizerType)
+	
+		Generates an instance of Randomizer.
+		
+			type
+			
+				adjusts the container behaviour, the possible values are:
+				Randomizer.SEQUENCED (returns items in the same order they were inserted),
+				Randomizer.PROBABILITY (returns items randomically, but taking in consideration the probability defined for each one)
+				and Randomizer.RANDOMIZED (returns items randomically)
+			
+		
+	
+
+
+Methods
+
+	Randomizer.add(object: Object, probability: Integer): void
+	
+		Adds an item to the container.
+		
+			object object that will be added
+			probability useful only when the container type is "Randomizer.PROBABILITY", where "probability" must be an integer number positive and higher than 1
+		
+	
+
+	Randomizer.remove(index: Integer): void
+	
+		Removes an element from the container.
+		
+			index index of the element
+		
+	
+
+	Randomizer.next(void): Object
+	
+		Returns an item based on the container type.
+	

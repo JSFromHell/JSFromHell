@@ -1,0 +1,30 @@
+<script type="text/javascript">
+//<![CDATA[
+
+var probability = new Randomizer(Randomizer.PROBABILITY);
+probability.add("A", 20);
+probability.add("B", 10);
+probability.add("C", 2);
+
+document.write("<h2>Randomizer.PROBABILITY = A: 20, B: 10, C: 2</h2>");
+for(var i = 20; i--; document.write(probability.next(), ", "));
+
+var random = new Randomizer(Randomizer.RANDOMIZED);
+random.add("A");
+random.add("B");
+random.add("C");
+
+document.write("<h2>Randomizer.RANDOMIZED = A, B, C</h2>");
+for(var i = 20; i--; document.write(random.next(), ", "));
+
+
+var sequenced = new Randomizer(Randomizer.SEQUENCED);
+sequenced.add("A");
+sequenced.add("B");
+sequenced.add("C");
+
+document.write("<h2>Randomizer.SEQUENCED = A, B, C</h2>");
+for(var i = 20; i--; document.write(sequenced.next(), ", "));
+
+//]]>
+</script>

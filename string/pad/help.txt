@@ -1,0 +1,8 @@
+String.pad(length: Integer, [substring: String = " "], [type: Integer = 0]): String
+
+	Returns the string with a substring padded on the left, right or both sides.
+	
+		length amount of characters that the string must have
+		substring string that will be concatenated
+		type specifies the side where the concatenation will happen, where: 0 = left, 1 = right and 2 = both sides
+	

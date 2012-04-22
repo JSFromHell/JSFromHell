@@ -1,0 +1,42 @@
+Constructor
+
+	Selection(textInput: HTMLInput)
+	
+		Generates a instance of Selection.
+		
+			textInput reference to a text input or textarea
+			
+	
+
+
+Class Properties
+
+	Selection.isSupported: Boolean indicates if the browser supports selection.		
+	Selection.isStandard: Boolean indicates if the browser supports the Gecko selection methods.
+
+
+
+Methods
+
+	Selection.getText(void): String
+	Retrieves the text in the selection.
+	
+	Selection.setText(text: String): void
+	
+		Changes the text of the selection.
+		
+			text replacement text
+		
+	
+
+	Selection.getCaret(void): Object
+	Retrieves an object containing two properties: start (selection start) and end (selection end).
+
+	Selection.setCaret(start: Integer, end: Integer): void
+	
+		Sets the selection.
+		
+			start selection start
+			end selection end
+						
+	
