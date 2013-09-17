@@ -1,5 +1,5 @@
 //+ Jonas Raoni Soares Silva
-//@ http://jsfromhell.com/forms/auto-tab [rev. #3]
+//@ http://jsfromhell.com/forms/auto-tab [rev. #4]
 
 autoTab = function(f){
 	var c = 0;
@@ -11,5 +11,5 @@ autoTab = function(f){
 			j != i && f[j].focus();
 		}
 	});
-	addEvent(f, "keypress", function(e){c = e.key;});
+	addEvent(f, "keypress", function(e){c = e.keyValue;});
 };

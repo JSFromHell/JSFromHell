@@ -1,5 +1,5 @@
 //+ Jonas Raoni Soares Silva
-//@ http://jsfromhell.com/forms/masked-input [rev. #1]
+//@ http://jsfromhell.com/forms/masked-input [rev. #2]
 
 MaskInput = function(f, m){
 	function mask(e){
@@ -11,7 +11,7 @@ MaskInput = function(f, m){
 					break;
 				return i <= r || c == rule;
 		}
-		var k, mC, r, c = String.fromCharCode(k = e.key), l = f.value.length;
+		var k, mC, r, c = String.fromCharCode(k = e.keyValue), l = f.value.length;
 		(!k || k == 8 ? 1 : (r = /^(.)\^(.*)$/.exec(m)) && (r[0] = r[2].indexOf(c) + 1) + 1 ?
 			r[1] == "O" ? r[0] : r[1] == "E" ? !r[0] : accept(c, r[1]) || r[0]
 			: (l = (f.value += m.substr(l, (r = /[A|9|C|\*]/i.exec(m.substr(l))) ?

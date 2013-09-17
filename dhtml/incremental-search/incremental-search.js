@@ -1,5 +1,5 @@
 //+ Jonas Raoni Soares Silva
-//@ http://jsfromhell.com/dhtml/incremental-search [rev. #4]
+//@ http://jsfromhell.com/dhtml/incremental-search [rev. #5]
 
 IncrementalSearch = function (input, callback, className) {
 	var i, $ = this;
@@ -52,7 +52,7 @@ with({ p: IncrementalSearch.prototype }) {
 		var f = (f = function () { arguments.callee.x.hide(); }, f.x = this, setTimeout(f, 200));
 	};
 	p._handler = function (e) {
-		var $ = this, t = e.type, k = e.key;
+		var $ = this, t = e.type, k = e.keyValue;
 		t == "focus" || t == "keyup" ? k != 40 && k != 38 && k != 13 && $._old != $.input.value && ($.hide(), $.callback($, $.input.value))
 		: t == "keydown" ? k == 40 ? $.next() : k == 38 ? $.previous() : $._old = $.input.value
 		: t == "keypress" ? k == 13 && (e.preventDefault(), $.select())
